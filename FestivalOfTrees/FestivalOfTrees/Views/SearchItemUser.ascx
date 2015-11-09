@@ -1,15 +1,12 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Search.ascx.cs" Inherits="FestivalOfTrees.Views.SearchItems" %>
-
-
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="SearchItemUser.ascx.cs" Inherits="FestivalOfTrees.Views.SearchItemUser" %>
 <div class="ui conatiner">
-    <div class="ui stacked segment">
+    <div class="ui stacked segment" style="min-height: 250px">
         <h3 style="text-align:center">Search for Items/Buyers</h3>
         <div class="ui buttons">
             <asp:Button ID="ItemBtn" runat="server" Text="Items" CssClass="ui red button" OnClick="ItemBtn_Click" />
             <div class="or"></div>
             <asp:Button ID="Buyers" runat="server" Text="Buyers" CssClass="ui smoky-brown button" OnClick="Buyers_Click"  />
         </div>
-        
             
          <asp:MultiView ID="SearchView" runat="server">
             <asp:View ID="View1" runat="server">
@@ -43,27 +40,31 @@
            
         </asp:MultiView>
         <br />
-        <div class="ui icon buttons">
+        <div class="ui icon right floated buttons">
             <asp:LinkButton ID="TableViewBtn" runat="server" CssClass="ui button" OnClick="TableViewBtn_Click"><i class='table icon'></i></asp:LinkButton>
             <asp:LinkButton ID="CardViewIcon" runat="server" CssClass="ui button" OnClick="CardViewBtn_Click"><i class='block layout icon'></i></asp:LinkButton>
         </div>
         <asp:MultiView ID="SearchResultView" runat="server">
             <asp:View ID="View3" runat="server">
-                <asp:Table ID="Table1" runat="server">
+                <asp:Table ID="Table1" runat="server" CssClass="ui red table center aligned">
                 </asp:Table>
             </asp:View>
             <asp:View ID="View4" runat="server">
-                <div class="ui link special four doubling  cards">
+                <div class="ui special cards">
                   <div class="card">
                     <div class="blurring dimmable image">
                         <div class="ui dimmer">
                             <div class="content">
                                 <div class="center">
-                                <div class="ui inverted button">View Item</div>
+                                <a class="ui inverted button" href="SingleView.aspx?item=CS001">View Item</a>
                                 </div>
                             </div>
                         </div>
-                        <img src="../assets/image/sock.jpg" />
+                        <div class="ui fluid image">
+                            <a class="ui green ribbon large label">Sold</a>
+                            <img src="../assets/image/sock.jpg" />
+                        </div>
+                        
                     </div>
                     <div class="content">
                       <div class="header">X'mas Family socks</div>
@@ -89,11 +90,14 @@
                         <div class="ui dimmer">
                             <div class="content">
                                 <div class="center">
-                                <div class="ui inverted button">View Item</div>
+                                <a class="ui inverted button" href="SingleView.aspx?item=CS001">View Item</a>
                                 </div>
                             </div>
                         </div>
-                        <img src="../assets/image/tree.jpg" />
+                        <div class="ui fluid image">
+                            <a class="ui gray ribbon large label">Unsold</a>
+                            <img src="../assets/image/tree.jpg" />
+                        </div>
                     </div>
                     <div class="content">
                       <div class="header">Molly</div>
@@ -119,11 +123,14 @@
                         <div class="ui dimmer">
                             <div class="content">
                                 <div class="center">
-                                <div class="ui inverted button">View Item</div>
+                                <a class="ui inverted button" href="SingleView.aspx?item=CS001">View Item</a>
                                 </div>
                             </div>
                         </div>
-                        <img src="../assets/image/wr.jpg" />
+                        <div class="ui fluid image">
+                            <a class="ui yellow ribbon large label">Unpaid</a>
+                            <img src="../assets/image/wr.jpg"/>
+                        </div>
                     </div>
                     <div class="content">
                       <div class="header">Elyse</div>
@@ -149,3 +156,4 @@
         </asp:MultiView>
     </div>
 </div>
+
